@@ -73,4 +73,4 @@ If you encounter any issues or have suggestions, please feel free to reach out!
 * **Developer:** [Mahdjoub Charaf Eddine]
 * **Email:** **[esrefmeliodas2@gmail.com]**
 * **Facebook:** **[esref_meliodas]**
-* **GitHub:** [Your GitHub Profile/Repo Link] (Optional)
+* **GitHub:** [https://github.com/Mahdjoub1Charafeddine/Matlab_RealTime_Scheduling.git]

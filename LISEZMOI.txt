@@ -57,4 +57,4 @@ Si vous rencontrez des problèmes ou avez des suggestions, n'hésitez pas à nou
 * **Développeur :** [Mahdjoub Charaf Eddine]
 * **Courriel :**[esrefmeliodas2@gmail.com]*
 * **Facebook :**[esref_meliodas]**
-* **GitHub :** [Votre profil GitHub/Lien vers votre dépôt] (Facultatif)
+* **GitHub :** [https://github.com/Mahdjoub1Charafeddine/Matlab_RealTime_Scheduling.git]
