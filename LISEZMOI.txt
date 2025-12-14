@@ -1,0 +1,60 @@
+# 🛠️ Boîte à outils ESRORD : Simulateur d'ordonnancement temps réel
+Bienvenue dans la **boîte à outils ESRORD**, un outil puissant conçu pour simuler et analyser les algorithmes d'ordonnancement de tâches temps réel dans l'environnement MATLAB.
+
+---
+## Prise en main
+Il existe deux méthodes principales pour exécuter la boîte à outils ESRORD : **Installation** (pour une utilisation permanente) et **Exécution portable** (pour une utilisation rapide et non permanente).
+### 1. Méthode d'installation (recommandée)
+Cette méthode intègre la boîte à outils directement dans votre environnement MATLAB, ce qui la rend accessible depuis n'importe quel répertoire.
+1. **Installation** :
+* Ouvrez **MATLAB**.
+* Accédez au répertoire où vous avez enregistré le fichier de la boîte à outils ESRORD (par exemple, le fichier `.mlappinstall` ou le fichier compressé).
+* Double-cliquez sur le fichier d'installation ou utilisez la fenêtre de commande MATLAB pour l'installer en suivant la procédure standard de MATLAB.
+2. **Lancement de la boîte à outils :**
+* Une fois installée, vous pouvez lancer la boîte à outils depuis **n'importe où** dans MATLAB en saisissant la commande suivante dans la **fenêtre de commandes** :
+``
+esrord
+```
+3. **Configuration initiale (interface graphique) :**
+* Une interface graphique s'affiche.
+* Dans l'interface graphique, sélectionnez la **technique d'ordonnancement** souhaitée, telle que **Round Robin**, **Rate Monotonic (RM)** ou toute autre option disponible.
+* Saisissez le **nombre de tâches** à simuler.
+4. **Configuration (ligne de commande) :**
+* Après la configuration initiale dans l'interface graphique, vous devez compléter la saisie des paramètres dans la **fenêtre de commandes MATLAB**. L'interface graphique vous invitera à saisir les paramètres restants de la tâche (par exemple, les durées d'exécution, les périodes et les échéances) conformément à l'algorithme d'ordonnancement choisi, ou la boîte à outils attendra votre saisie.
+Suivez les instructions à l'écran qui s'affichent dans la fenêtre de commande pour finaliser la configuration de votre simulation.
+---
+
+### 2. Méthode d'exécution portable
+Cette méthode vous permet d'exécuter l'application directement depuis son répertoire principal, sans installation.
+1. **Accès au dossier :**
+Ouvrez **MATLAB**.
+Accédez au répertoire principal de la boîte à outils portable :
+```
+/ordonnanceur/esrord toolbox/
+``
+(Assurez-vous que ce répertoire est le répertoire courant de votre session MATLAB).
+2. **Lancement de la boîte à outils :**
+* Dans la **fenêtre de commandes MATLAB**, exécutez le fichier principal de l'application :
+```
+esrord.fig
+```
+* *Remarque : Ce fichier contient l'interface graphique principale et lance l'application.*
+3. **Configuration initiale (interface graphique) :**
+* L'interface graphique s'affiche.
+* Dans l'interface graphique, sélectionnez la **technique d'ordonnancement** souhaitée, telle que **Round Robin**, **Rate Monotonic (RM)** ou toute autre option disponible.
+* Saisissez le **nombre de tâches** à simuler.
+
+4. **Configuration (ligne de commande) :**
+* Après la configuration initiale dans l'interface graphique, vous devez saisir les paramètres dans la **fenêtre de commandes MATLAB**.
+* L'interface graphique vous invitera à saisir les paramètres restants des tâches (par exemple, les durées d'exécution, les périodes, les échéances) conformément à l'algorithme d'ordonnancement choisi. Suivez les instructions à l'écran qui s'affichent dans la fenêtre de commande pour finaliser la configuration de votre simulation.
+
+---
+
+## Contact et assistance
+
+Si vous rencontrez des problèmes ou avez des suggestions, n'hésitez pas à nous contacter !
+
+* **Développeur :** [Mahdjoub Charaf Eddine]
+* **Courriel :**[esrefmeliodas2@gmail.com]*
+* **Facebook :**[esref_meliodas]**
+* **GitHub :** [Votre profil GitHub/Lien vers votre dépôt] (Facultatif)

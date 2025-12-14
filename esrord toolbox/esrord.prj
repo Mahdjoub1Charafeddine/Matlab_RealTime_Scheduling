@@ -1,0 +1,108 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration file="C:\Users\Esref Meliodas\Desktop\esrord.prj" location="C:\Users\Esref Meliodas\Desktop" name="esrord" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>esrord</param.appname>
+    <param.authnamewatermark>Esrord</param.authnamewatermark>
+    <param.email>esrefmeliodas2@gmail.com</param.email>
+    <param.company>Algeria</param.company>
+    <param.summary />
+    <param.description>Scheduling Techniques are algorithms and methodologies used in computing, operating systems, and real-time systems to determine the order in which tasks (processes or threads) are executed by the CPU. The primary goal is to optimize system performance, minimize latency, and ensure fairness or meet specific deadlines.</param.description>
+    <param.screenshot>${PROJECT_ROOT}\images.png</param.screenshot>
+    <param.version>1.01</param.version>
+    <param.output>${PROJECT_ROOT}\esrord.mltbx</param.output>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.guid>de3c7381-213b-4512-8805-89284df9a30a</param.guid>
+    <param.exclude.filters />
+    <param.examples />
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <param.matlabpath.excludes />
+    <unset>
+      <param.email />
+      <param.company />
+      <param.summary />
+      <param.output />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.exclude.filters />
+      <param.examples />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+      <param.matlabpath.excludes />
+    </unset>
+    <fileset.rootdir>
+      <file>${PROJECT_ROOT}\mbareqia\GUI</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\about.fig</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\about.m</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\esrord.fig</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\esrord.m</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\FCFS.fig</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\FCFS.m</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\HC_tech.jpeg</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\RR.fig</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\RR.m</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\Techniques-dordonnancement.pdf</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\Uni.jpeg</file>
+      <file>${PROJECT_ROOT}\mbareqia\GUI\Untitled1.slx</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\Esref Meliodas\Desktop" name="esrord.mltbx" optional="false">C:\Users\Esref Meliodas\Desktop\esrord.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2016a</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="embeddedcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
