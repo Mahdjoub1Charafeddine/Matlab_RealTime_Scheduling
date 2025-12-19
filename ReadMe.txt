@@ -1,4 +1,4 @@
-# 🛠️ ESRORD Toolbox: Real-Time Scheduling Simulator
+# 🛠️ ESRORD Toolbox: Real-Time Scheduling Simulator V1.01
 
 Welcome to the **ESRORD Toolbox**, a powerful tool designed for simulating and analyzing real-time task scheduling algorithms within the MATLAB environment.
 
