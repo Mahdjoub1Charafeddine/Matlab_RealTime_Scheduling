@@ -105,14 +105,14 @@ for i = 1:n
     T(i) = input(sprintf('  T (Period for Task %d): ', i));
 end
 
-%% 2. Ordonnançabilité Analysis - Condition Suffisante
+%% Ordonnançabilité Analysis - Condition Suffisante
 disp('========================================');
 disp('ANALYSE D''ORDONNANÇABILITÉ - Condition Suffisante');
 disp('========================================');
 
 % Calculate total utilization
-U = sum(C ./ T);
-fprintf('U = ?(Ci/Ti) = %.4f\n', U);
+U = sum(C ./ T);%   ? Ci/Ti
+fprintf('U = (Ci/Ti) = %.4f\n', U);
 
 % Calculate RM bound
 RM_bound = n * (2^(1/n) - 1);
@@ -122,7 +122,7 @@ fprintf('RM bound = n * (2^(1/n) - 1) = %d * (2^(1/%d) - 1) = %.4f\n', n, n, RM_
 if U <= RM_bound
     fprintf('\n? Condition suffisante SATISFAITE:\n');
     fprintf('   U = %.4f <= RM bound = %.4f\n', U, RM_bound);
-    fprintf('   ? Le système est ORDONNANÇABLE par Rate Monotonic\n');
+    fprintf('   =>>> Le système est ORDONNANÇABLE par Rate Monotonic\n <<=');
     ordonnancable = true;
     
     % Continue with visualization options
@@ -130,18 +130,16 @@ if U <= RM_bound
     disp('Visualization Options:');
     disp('1. Show step-by-step animation (recommended for learning)');
     disp('2. Show only final results (faster)');
-    disp('3. Show mini-gantt every 5 time units');
-    visual_option = input('Choose visualization option (1-3): ');
+    visual_option = input('Choose visualization option (1-2): ');
     
     % Set flags based on user choice
     show_animation = (visual_option == 1);
     show_final_only = (visual_option == 2);
-    show_mini_updates = (visual_option == 3);
     
 else
-    fprintf('\n??  Condition suffisante NON SATISFAITE:\n');
+    fprintf('\n  Condition suffisante NON SATISFAITE:\n');
     fprintf('   U = %.4f > RM bound = %.4f\n', U, RM_bound);
-    fprintf('   ? On ne peut pas garantir l''ordonnançabilité par RM\n');
+    fprintf('   On ne peut pas garantir l''ordonnançabilité par RM\n');
     
     % Check condition nécessaire
     disp('========================================');
@@ -151,12 +149,12 @@ else
     if U > 1
         fprintf('\n? Condition nécessaire NON SATISFAITE:\n');
         fprintf('   U = %.4f > 1\n', U);
-        fprintf('   ? Le système est NON ORDONNANÇABLE par aucun algorithme!\n');
+        fprintf('    Le système est NON ORDONNANÇABLE par aucun algorithme!\n');
         ordonnancable = false;
     else
-        fprintf('\n??  Condition nécessaire SATISFAITE:\n');
+        fprintf('\n  Condition nécessaire SATISFAITE:\n');
         fprintf('   U = %.4f <= 1\n', U);
-        fprintf('   ? Le système peut être ordonnançable, mais pas garanti par RM\n');
+        fprintf('    Le système peut être ordonnançable\n');
         
         % Ask if user wants to continue anyway
         disp('========================================');
@@ -168,8 +166,8 @@ else
             disp('Visualization Options:');
             disp('1. Show step-by-step animation (recommended for learning)');
             disp('2. Show only final results (faster)');
-            disp('3. Show mini-gantt every 5 time units');
-            visual_option = input('Choose visualization option (1-3): ');
+          
+            visual_option = input('Choose visualization option (1-2): ');
             
             % Set flags based on user choice
             show_animation = (visual_option == 1);
@@ -189,7 +187,7 @@ if ~ordonnancable
     return;
 end
 
-%% ANIMATION SPEED CONTROL
+%% ANIMATION SPEED CONTROL 
 animation_delay = 0.5; % Default value
 if show_animation
     disp('========================================');
@@ -230,14 +228,14 @@ if show_animation
     fprintf('Animation speed set to %.2f seconds per step\n', animation_delay);
 end
 
-%% 3. Display Task Information and Calculate Priorities
+%% Display Task Information and Calculate Priorities
 disp('========================================');
 disp('Task Information and Priorities:');
 disp('========================================');
 
 % Calculate priority according to Rate Monotonic (shorter period = higher priority)
-[~, priority_order] = sort(T);  % Ascending order of periods
-
+[~, priority_order] = sort(T);  %T1<T2<T3... 
+%Creating a table to sort the inputs
 fprintf('%-6s %-8s %-8s %-8s %-8s %-10s %-12s\n', ...
         'Task', 'r0', 'C', 'D', 'T', 'U(C/T)', 'Priority');
 fprintf('%s\n', repmat('-', 70, 1));
@@ -255,21 +253,21 @@ for i = 1:n
     fprintf('%d. Task %d (T=%d)\n', i, task_id, T(task_id));
 end
 
-%% 4. Calculate LCM of Periods
+%%  Calculate LCM=PPCM(Ti) of Periods
 lcm_value = T(1);
 for i = 2:n
     lcm_value = lcm(lcm_value, T(i));
 end
-fprintf('\nSimulation period (LCM of periods): %d\n', lcm_value);
+fprintf('\nSimulation period PPCM(Ti)=: %d\n', lcm_value);
 
-%% 5. Create All Task Instances for the Hyperperiod (LCM)
+%% Create All Task Instances for the Hyperperiod (PPCM)
 disp('========================================');
 disp('Creating task instances for hyperperiod...');
 
 % Calculate number of instances for each task
 num_instances_per_task = zeros(1, n);
 for i = 1:n
-    num_instances_per_task(i) = ceil(lcm_value / T(i));
+    num_instances_per_task(i) = ceil(lcm_value / T(i));%Cette ligne calcule le « nombre de fois » que la tâche i est répétée au cours d'un cycle temporel complet de la valeur lcm_value
     fprintf('Task %d: %d instances\n', i, num_instances_per_task(i));
 end
 
@@ -291,7 +289,7 @@ if ~isempty(all_instances)
     all_instances = sortrows(all_instances, [3, 6]);  % Sort by release_time, then priority
 end
 
-%% 6. Display Instance Information
+%% Display Instance Information
 disp('========================================');
 disp('Task Instances Information:');
 disp('========================================');
@@ -305,7 +303,7 @@ for i = 1:size(all_instances, 1)
             all_instances(i,3), all_instances(i,4), all_instances(i,5), all_instances(i,6));
 end
 
-%% 7. Initialize Real-time Gantt Figure
+%%  Initialize Real-time Gantt Figure
 if show_animation
     fig1 = figure('Name', 'Real-time Gantt Chart - Rate Monotonic', ...
                   'Position', [50, 50, 1400, 600]);
@@ -800,7 +798,7 @@ while simulation_active && current_time < max_simulation_time
     end
 end
 
-%% 9. Calculate Idle Time Statistics
+%%  Calculate Idle Time Statistics
 % Calculate total idle time
 total_idle_time = 0;
 for i = 1:length(idle_blocks)
@@ -1080,7 +1078,7 @@ fprintf('\nScheduler performance:\n');
 fprintf('- CPU utilization: %.1f%%\n', cpu_utilization);
 fprintf('- Scheduler idle time: %.1f%% (shown in BLACK)\n', idle_percentage);
 fprintf('- Preemptions: %d\n', preemptions);
-fprintf('- Cancelled tasks: %d/%d\n', sum(task_cancelled), n);
+fprintf('- Canrcelled tasks: %d/%d\n', sum(task_cancelled), n);
 
 if missed_deadlines == 0
     fprintf('- Result:  ALL TASKS SCHEDULED SUCCESSFULLY\n');
